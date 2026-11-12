@@ -1,0 +1,3 @@
+# Keep source articles local; do not publish them with the public repository.
+/notes/*
+!/notes/README.md
