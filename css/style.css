@@ -629,6 +629,25 @@ body {
   font-size: 0.82rem;
   color: var(--muted);
 }
+.crown-stamps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+.crown-stamp {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  aspect-ratio: 1;
+  border: 1px dashed #c49a46;
+  border-radius: 50%;
+  background: var(--yellow);
+  box-shadow: inset 0 0 0 2px #fff;
+  font-size: 1.15rem;
+  line-height: 1;
+}
 .sectionhead {
   margin: 0 0 18px;
   align-items: end;

@@ -89,6 +89,17 @@ function cardFor(game) {
 function updateStats() {
   const total = document.querySelector('[data-stat="total"]');
   if (total) total.textContent = games.length;
+  const stamps = document.getElementById("crown-stamps");
+  if (stamps) {
+    stamps.replaceChildren(
+      ...games.map(() => {
+        const crown = el("span", "crown-stamp", "👑");
+        crown.setAttribute("aria-hidden", "true");
+        return crown;
+      }),
+    );
+    stamps.setAttribute("aria-label", `共有 ${games.length} 枚收藏皇冠`);
+  }
 }
 function render() {
   const query = document
