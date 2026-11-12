@@ -48,11 +48,11 @@ function openGame(game) {
     "✦ 遊戲特色",
     (game.features || []).join("・") || "待補充",
   );
-  addSection(
-    details,
-    "個人評分",
-    game.rating == null ? "尚未評分" : `${game.rating} / 5`,
-  );
+  const ratingText =
+    game.rating == null
+      ? "尚未評分"
+      : `${game.rating} / 5${game.ratingSource === "AI 評估" ? "（AI 評估）" : ""}`;
+  addSection(details, "評分", ratingText);
   addSection(details, "遊玩心得", game.review || "尚未填寫個人心得");
   addSection(details, "✦ 推薦對象", game.recommendedFor || "待補充");
   layout.append(visual, details);
