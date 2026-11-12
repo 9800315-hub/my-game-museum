@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "id": "hollow-knight",
+    "title": "空洞騎士 Hollow Knight",
+    "genres": ["動作", "冒險"],
+    "status": "想玩",
+    "rating": null,
+    "description": "《空洞騎士》以相連的地下王國為舞台，透過逐步取得的能力開啟新路線。推薦文章特別提到具挑戰性的戰鬥、風格各異的區域美術，以及需要從環境與角色線索中拼湊的故事。",
+    "features": [
+      "相連區域探索",
+      "高挑戰度的戰鬥",
+      "風格各異的區域美術",
+      "透過環境線索探索世界觀"
+    ],
+    "review": "",
+    "recommendedFor": "喜歡高難度 2D 動作遊戲、探索相連地圖，並享受從線索拼湊故事的玩家",
+    "image": "assets/images/Hollow Knight.avif",
+    "isDemo": false
+  }
+]
