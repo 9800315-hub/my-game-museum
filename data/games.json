@@ -19,6 +19,24 @@
     "isDemo": false
   },
   {
+    "id": "overcooked-2",
+    "title": "Overcooked! 2",
+    "genres": ["合作", "派對"],
+    "status": "想玩",
+    "rating": 3,
+    "description": "最多四位玩家在變化中的廚房裡合作完成訂單，從備料、切菜、烹調到擺盤出餐與洗碗；倒數計時與關卡變化考驗分工和默契。",
+    "features": [
+      "單人或最多四人遊玩",
+      "多人合作處理料理訂單",
+      "倒數計時與變化中的關卡",
+      "備料、烹調、出餐與洗碗流程"
+    ],
+    "review": "推薦評析：多人合作容易炒熱聚會氣氛，倒數計時和場景變化也帶來分工挑戰；單人或雙人遊玩可能較不合適，隊友太在意輸贏時也容易產生摩擦。文章總評為 3/5。",
+    "recommendedFor": "喜歡多人合作派對遊戲、能接受時間壓力與分工挑戰的玩家",
+    "image": "images/Overcooked! 2.avif",
+    "isDemo": false
+  },
+  {
     "id": "hollow-knight",
     "title": "空洞騎士 Hollow Knight",
     "genres": ["動作", "冒險"],

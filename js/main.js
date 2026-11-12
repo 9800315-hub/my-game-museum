@@ -15,12 +15,19 @@ function tag(text, type = "") {
 }
 function imageFor(game) {
   const img = el("img");
-  img.src = game.image;
   img.alt = `${game.title} 的封面`;
+  const updateAspectRatio = () => {
+    if (img.naturalWidth && img.naturalHeight) {
+      img.style.aspectRatio = `${img.naturalWidth} / ${img.naturalHeight}`;
+    }
+  };
+  img.addEventListener("load", updateAspectRatio);
   img.onerror = () => {
     img.onerror = null;
     img.src = "images/placeholder.svg";
   };
+  img.src = game.image;
+  if (img.complete && img.naturalWidth) updateAspectRatio();
   return img;
 }
 function renderFeaturedGame() {
