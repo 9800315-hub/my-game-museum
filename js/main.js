@@ -23,6 +23,14 @@ function imageFor(game) {
   };
   return img;
 }
+function renderFeaturedGame() {
+  const game = games[0];
+  if (!game) return;
+  const image = imageFor(game);
+  image.id = "featured-image";
+  document.getElementById("featured-image").replaceWith(image);
+  document.getElementById("featured-title").textContent = game.title;
+}
 function tagsFor(game) {
   const wrap = el("div", "tags");
   wrap.append(tag(game.status, game.status === "測試中" ? "testing" : ""));
@@ -116,6 +124,7 @@ async function init() {
     if (!response.ok) throw new Error("讀取失敗");
     games = await response.json();
     if (!Array.isArray(games)) throw new Error("資料格式錯誤");
+    renderFeaturedGame();
     const genreSelect = document.getElementById("genre");
     [...new Set(games.flatMap((g) => g.genres))]
       .sort((a, b) => a.localeCompare(b, "zh-Hant"))
