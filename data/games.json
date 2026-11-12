@@ -1,0 +1,60 @@
+[
+  {
+    "id": "overcooked-2",
+    "title": "Overcooked! 2",
+    "genres": [
+      "合作",
+      "派對"
+    ],
+    "status": "遊玩中",
+    "rating": null,
+    "description": "多人合作料理遊戲，玩家需要分工準備食材、烹飪與送餐，在忙碌的廚房中一起完成關卡挑戰。",
+    "features": [
+      "多人合作",
+      "時間管理",
+      "關卡挑戰"
+    ],
+    "review": "",
+    "recommendedFor": "喜歡和朋友一起合作闖關的玩家",
+    "image": "assets/images/overcooked-2.svg",
+    "isDemo": true
+  },
+  {
+    "id": "dumpster-gang-demo",
+    "title": "Dumpster Gang Demo",
+    "genres": [
+      "待確認"
+    ],
+    "status": "測試中",
+    "rating": null,
+    "description": "目前收錄為試玩中的 Demo 遊戲。玩法與類型介紹待實際體驗後補充，避免將未確認的資訊寫成事實。",
+    "features": [
+      "Demo 試玩",
+      "待補充心得"
+    ],
+    "review": "",
+    "recommendedFor": "待實際試玩後補充",
+    "image": "assets/images/dumpster-gang-demo.svg",
+    "isDemo": true
+  },
+  {
+    "id": "hollow-knight",
+    "title": "Hollow Knight",
+    "genres": [
+      "動作",
+      "冒險"
+    ],
+    "status": "已通關",
+    "rating": null,
+    "description": "以探索為核心的 2D 動作冒險遊戲，玩家走進廣大的地下王國，逐步解開環境與角色背後的故事。",
+    "features": [
+      "探索地圖",
+      "動作戰鬥",
+      "手繪風格"
+    ],
+    "review": "",
+    "recommendedFor": "喜歡探索與動作挑戰的玩家",
+    "image": "assets/images/hollow-knight.svg",
+    "isDemo": true
+  }
+]

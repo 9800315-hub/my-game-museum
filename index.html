@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="遊戲收藏博物館：依遊戲推薦文章整理值得認識的遊戲。"
+    />
+    <title>遊戲收藏博物館｜Game Museum</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <nav class="container nav" aria-label="主要導覽">
+        <a class="logo" href="#top"
+          ><span aria-hidden="true">🎮</span> 遊戲收藏博物館</a
+        >
+        <div class="navlinks">
+          <a href="#collection">遊戲收藏</a>
+          <a href="#about">關於本站</a>
+        </div>
+      </nav>
+    </header>
+    <main class="container" id="top">
+      <section class="hero">
+        <div class="eyebrow">GAME RECOMMENDATION ARCHIVE</div>
+        <h1>遊戲收藏<br />博物館</h1>
+        <p>
+          提供遊戲推薦文章後，AI
+          會依規則整理成推薦收藏。點選卡片查看遊戲介紹與適合對象。
+        </p>
+        <a class="btn" href="#collection">瀏覽遊戲收藏 ↓</a>
+      </section>
+      <section class="stats" aria-label="收藏統計">
+        <div class="stat">
+          <strong data-stat="total">—</strong><span>收藏遊戲</span>
+        </div>
+        <div class="stat">
+          <strong data-stat="completed">—</strong><span>已通關</span>
+        </div>
+        <div class="stat">
+          <strong data-stat="playing">—</strong><span>遊玩中</span>
+        </div>
+        <div class="stat">
+          <strong data-stat="testing">—</strong><span>測試中</span>
+        </div>
+      </section>
+      <section id="collection" aria-labelledby="collection-heading">
+        <div class="sectionhead">
+          <h2 id="collection-heading">✦ 遊戲收藏</h2>
+          <span class="subtle" id="result-count" aria-live="polite"></span>
+        </div>
+        <div class="filters">
+          <label
+            ><span class="filter-label">搜尋遊戲</span
+            ><input id="search" type="search" placeholder="輸入遊戲名稱…"
+          /></label>
+          <label
+            ><span class="filter-label">遊戲類型</span
+            ><select id="genre">
+              <option value="">所有類型</option>
+            </select></label
+          >
+          <label
+            ><span class="filter-label">遊玩狀態</span
+            ><select id="status">
+              <option value="">所有狀態</option>
+              <option>想玩</option>
+              <option>遊玩中</option>
+              <option>測試中</option>
+              <option>已通關</option>
+              <option>暫停遊玩</option>
+            </select></label
+          >
+        </div>
+        <div class="cards" id="game-list" aria-live="polite">
+          <div class="empty">正在載入遊戲…</div>
+        </div>
+      </section>
+      <section id="about" class="about-panel">
+        <h2>關於這座收藏館</h2>
+        <p>
+          提供遊戲推薦文章後，AI 會依照
+          <strong>AGENTS.md</strong>
+          擷取可確認的資訊，整理一款推薦遊戲。沒有提供的評分與遊玩心得會保持空白，不會捏造遊玩紀錄。
+        </p>
+      </section>
+    </main>
+    <footer class="container">✦ 遊戲收藏博物館 · 依推薦文章持續整理 ✦</footer>
+    <dialog id="game-dialog" class="game-dialog" aria-labelledby="dialog-title">
+      <button
+        type="button"
+        class="dialog-close"
+        id="dialog-close"
+        aria-label="關閉遊戲詳細資訊"
+      >
+        ×
+      </button>
+      <div id="dialog-content"></div>
+    </dialog>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
