@@ -16,7 +16,7 @@ function tag(text, type = "") {
 function imageFor(game) {
   const img = el("img");
   img.src = game.image;
-  img.alt = `${game.title} 的示意封面`;
+  img.alt = `${game.title} 的封面`;
   img.onerror = () => {
     img.onerror = null;
     img.src = "assets/images/placeholder.svg";
@@ -48,12 +48,9 @@ function openGame(game) {
     "✦ 遊戲特色",
     (game.features || []).join("・") || "待補充",
   );
-  const ratingText =
-    game.rating == null
-      ? "尚未評分"
-      : `${game.rating} / 5${game.ratingSource === "AI 評估" ? "（AI 評估）" : ""}`;
+  const ratingText = game.rating == null ? "尚未評分" : `${game.rating} / 5`;
   addSection(details, "評分", ratingText);
-  addSection(details, "遊玩心得", game.review || "尚未填寫個人心得");
+  addSection(details, "推薦評析", game.review || "尚未提供評析");
   addSection(details, "✦ 推薦對象", game.recommendedFor || "待補充");
   layout.append(visual, details);
   content.append(layout);
@@ -93,6 +90,7 @@ function render() {
     ? `找到 ${filtered.length} 款遊戲`
     : "";
   const grid = document.getElementById("game-list");
+  grid.classList.toggle("single-card", filtered.length === 1);
   grid.replaceChildren(...filtered.map(cardFor));
   if (!filtered.length)
     grid.append(
