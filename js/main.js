@@ -75,16 +75,8 @@ function cardFor(game) {
   return button;
 }
 function updateStats() {
-  const stats = {
-    total: games.length,
-    completed: games.filter((g) => g.status === "已通關").length,
-    playing: games.filter((g) => g.status === "遊玩中").length,
-    testing: games.filter((g) => g.status === "測試中").length,
-  };
-  Object.entries(stats).forEach(([key, value]) => {
-    const target = document.querySelector(`[data-stat="${key}"]`);
-    if (target) target.textContent = value;
-  });
+  const total = document.querySelector('[data-stat="total"]');
+  if (total) total.textContent = games.length;
 }
 function render() {
   const query = document
@@ -92,20 +84,25 @@ function render() {
     .value.trim()
     .toLocaleLowerCase();
   const genre = document.getElementById("genre").value;
-  const status = document.getElementById("status").value;
   const filtered = games.filter(
     (g) =>
       g.title.toLocaleLowerCase().includes(query) &&
-      (!genre || g.genres.includes(genre)) &&
-      (!status || g.status === status),
+      (!genre || g.genres.includes(genre)),
   );
-  document.getElementById("result-count").textContent =
-    `找到 ${filtered.length} 款遊戲`;
+  document.getElementById("result-count").textContent = games.length
+    ? `找到 ${filtered.length} 款遊戲`
+    : "";
   const grid = document.getElementById("game-list");
   grid.replaceChildren(...filtered.map(cardFor));
   if (!filtered.length)
     grid.append(
-      el("div", "empty", "找不到符合條件的遊戲，試試其他關鍵字或分類。"),
+      el(
+        "div",
+        "empty",
+        games.length
+          ? "找不到符合條件的遊戲，試試其他關鍵字或分類。"
+          : "目前尚無收藏遊戲，提供推薦文章後即可新增。",
+      ),
     );
 }
 async function init() {
@@ -129,7 +126,7 @@ async function init() {
         option.value = genre;
         genreSelect.append(option);
       });
-    ["search", "genre", "status"].forEach((id) =>
+    ["search", "genre"].forEach((id) =>
       document
         .getElementById(id)
         .addEventListener(id === "search" ? "input" : "change", render),
