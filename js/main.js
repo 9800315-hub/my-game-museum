@@ -19,7 +19,7 @@ function imageFor(game) {
   img.alt = `${game.title} 的封面`;
   img.onerror = () => {
     img.onerror = null;
-    img.src = "assets/images/placeholder.svg";
+    img.src = "images/placeholder.svg";
   };
   return img;
 }
